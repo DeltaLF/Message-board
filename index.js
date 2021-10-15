@@ -1,6 +1,5 @@
 var express = require('express');
 var session = require('express-session');
-const DB = require('./db');
 var db = require('./db')
 var pwd = require('./pwd')
 
@@ -67,12 +66,16 @@ app.get('/changepassword',function(req,res){
 })
 app.post('/changepassword',function(req,res){
     console.log("dbg changepassword btn")
-    pwd.chgpwd(req,function(err){
-        if (err){
-            res.send(err);
-        } else {
-            res.redirect('/')
+    pwd.chgpwd(req,function(chgpwd_ind){
+        console.log("this is ind",chgpwd_ind)
+        if ( chgpwd_ind < 0){
+            console.log('fail to change password')
+            res.redirect('/changepassword')
+        }else{
+            console.log('password is changed')
+            res.redirect('/') 
         }
+        
     })
     console.log("");
 })

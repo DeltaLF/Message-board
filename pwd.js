@@ -33,11 +33,13 @@ var PWD = {
             for(var i = 0; i<User.length; i++){
                 if (User[i].username == req.body.username && User[i].password == req.body.oldpassword ){
                     User[i].password = req.body.newpassword
+                    index = i
                     PWD.savepwd(User,cb)
                     console.log('change psd success')
-                    break;
+                    return
                 }
-            }                
+            }
+            cb(index)     
         })
     },
     savepwd: function(data,cb){
