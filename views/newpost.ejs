@@ -2,19 +2,22 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  
 </head>
 <body>
   <div class="container">
+    <h1>New Message</h1>
     <form method="post" action="/posts">
       <div class="form-group">
-        <label for="author">作者</label>
-        <input name="author" class="form-control" id="author" placeholder="author">
+        <label for="author">Author</label>
+        <input name="author" class="form-control" id="author" placeholder="author" size="30" style="width:150px">
       </div>
       <div class="form-group">
-        <label >內容</label>
-        <textarea name="content"></textarea>
+        <label >content</label>
+        <p></p>
+        <textarea name="content" placeholder="please enter content" requrie cols="50" rows="10" ></textarea>
       </div>
-      <button type="submit" class="btn btn-default">送出</button>
+      <button type="submit" class="btn btn-default">submit</button>
     </form>
   </div>
 </body>

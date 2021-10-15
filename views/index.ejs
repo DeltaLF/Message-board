@@ -13,16 +13,16 @@
           if (response.status == 'SUCCESS'){
             element.parents('.panel').fadeOut();
             console.log("delete!")
-            alert('刪除成功');
+            alert('delete!');
           } else{
             console.log("fail to delete")
-            alert('刪除失敗');
+            alert('fail to delete!');
           }
         },
         error:function(err){
           console.log("it's errorrrrrrr")
           console.log(err);
-          alert('刪除失敗');
+          alert('fail to delete!');
         }
       })
     })
@@ -31,24 +31,24 @@
 <body>
   <div class="container">
     <% if (username) { %>
-      <a class="btn btn-default" href="/changepassword">變更密碼</a>
-      <a class="btn btn-default" href="/logout">登出</a>
+      <a class="btn btn-default" href="/changepassword">changepassword</a>
+      <a class="btn btn-default" href="/logout">logout</a>
     <% } else { %>
-      <a class="btn btn-default" href="/login">登入</a>
+      <a class="btn btn-default" href="/login">login</a>
     <% } %>
 
-    <a class="btn btn-primary" href="/posts">發表新留言</a>
-    <h2>留言列表</h2>
+    <a class="btn btn-primary" href="/posts">new post</a>
+    <h2>posts</h2>
     <div>
       <% for(var i=0; i<posts.length; i++) { %>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><%= posts[i].author %>, 發佈時間：<%= posts[i].createTime %></h3>
+            <h3 class="panel-title"><%= posts[i].author %>, Time：<%= posts[i].createTime %></h3>
           </div>
           <div class="panel-body">
             <%= posts[i].content  %>
             <% if (isAdmin) { %>
-              <a class="btn-delete" data-id="<%= posts[i]._id %>">刪除</a>
+              <a class="btn-delete" data-id="<%= posts[i]._id %>">delete</a>
             <% } %>
           </div>
         </div>
