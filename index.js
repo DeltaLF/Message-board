@@ -2,16 +2,16 @@ var express = require('express');
 var session = require('express-session');
 var db = require('./db')
 var pwd = require('./pwd')
-
 var app = express();
 app.use(session({
     secret:'top secret',
 }))
+app.use(express.static(__dirname + '/views'));
 app.use(express.urlencoded({extended:false}))
 app.set('view engine','ejs');
 app.get('/',function(req,res){
-    var username = req.session.username;
-    var isAdmin = false;
+    let username = req.session.username;
+    let isAdmin = false;
     if (username){
         isAdmin = true;
     }
@@ -30,6 +30,25 @@ app.get('/',function(req,res){
 app.get('/posts/delete/:id',function(req,res){  // inde.ejs should also be modified _id
     var id = req.params.id;
     db.deletePost(id,function(err){
+        if (err){
+            res.send({
+                status: 'FAILURE',
+                err: err
+            });
+        } else {
+            res.send({
+                status: 'SUCCESS'
+            })
+        }
+    })
+})
+app.get('/posts/edit/:id',function(req,res){  // inde.ejs should also be modified _id
+    var id = req.params.id;
+    let edited_data = req.query.edited;
+    console.log("post eidt id in controller")
+    console.log(id)
+    console.log(edited_data)
+    db.editPost(id,edited_data,function(err){
         if (err){
             res.send({
                 status: 'FAILURE',

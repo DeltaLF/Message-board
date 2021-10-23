@@ -1,0 +1,199 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+}
+
+.active {
+  color: #337ab7;
+}
+
+header {
+  -webkit-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+}
+
+header nav {
+  width: 100%;
+}
+
+header nav ul {
+  padding: 2rem;
+  width: 70%;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header nav ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.75rem;
+}
+
+header nav ul li a {
+  color: black;
+  -webkit-text-decoration: None;
+          text-decoration: None;
+}
+
+body .container {
+  margin: 5rem;
+}
+
+body .container .panel-body {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+body .btn-edit,
+body .btn-delete,
+body .btn-login,
+body .btn-newpost {
+  background-color: #337ab7;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+          box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0.5rem;
+  outline: none;
+  padding: 8px 0.8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+body .button-7:hover,
+body .button-7:focus {
+  background-color: #07c;
+}
+
+body .button-7:focus {
+  -webkit-box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+          box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+}
+
+body .button-7:active {
+  background-color: #0064bd;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  width: 100vw;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  bottom: 0px;
+  /*min-height: 30vh;*/
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer div.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer div.logo h1 {
+  font-size: 3rem;
+}
+
+footer nav {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 50px;
+          flex: 2 1 50px;
+  margin: 2rem 0rem;
+}
+
+footer nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer nav ul li {
+  -ms-flex-preferred-size: 100px;
+      flex-basis: 100px;
+}
+
+footer nav ul li a {
+  color: white;
+  font-size: 1.75rem;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1100px) {
+  header nav ul {
+    width: 10 0%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header nav ul li {
+    padding: 1rem;
+    /*border-bottom: 2px solid gray;*/
+  }
+}
+/*# sourceMappingURL=style.css.map */

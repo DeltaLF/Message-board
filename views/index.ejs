@@ -3,6 +3,13 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!--Google font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles/style.css">
   <script>
     $(document).on('click','.btn-delete',function(){
       var element = $(this);
@@ -16,7 +23,7 @@
             alert('delete!');
           } else{
             console.log("fail to delete")
-            alert('fail to delete!');
+            alert('fail to delete!'); 
           }
         },
         error:function(err){
@@ -26,9 +33,48 @@
         }
       })
     })
+
+    $(document).on('click','.btn-edit',function(){
+      var element = $(this);
+      var id = element.attr('data-id');
+      let edited_data = prompt("Input new contnet")
+      let panel_body = document.getElementById(id)
+      console.log(getKeys(panel_body))
+      panel_body.innerHTML = edited_data;
+      console.log("edit!")
+      $.ajax({
+        url:'/posts/edit/' + id,
+        data:{ "edited":edited_data},
+        success:function(response){
+          if (response.status == 'SUCCESS'){
+
+          } else{
+            console.log("fail to edit")
+            alert('fail to edit!'); 
+          }
+        },
+        error:function(err){
+          console.log("it's errorrrrrrr")
+          console.log(err);
+          alert('fail to edit!');
+        }
+      })
+    })
+
   </script>
 </head>
 <body>
+  <header>
+    <nav>
+        <ul>
+            <li><a class="active" href="#">Main page</a></li>
+            <li><a href="posts">New post</a></li>
+            <li><a href="login">Login</a></li> 
+        </ul>
+    </nav>
+</header>
+
+  <main>
   <div class="container">
     <% if (username) { %>
       <a class="btn btn-default" href="/changepassword">changepassword</a>
@@ -43,17 +89,32 @@
       <% for(var i=0; i<posts.length; i++) { %>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><%= posts[i].author %>, Time：<%= posts[i].createTime %></h3>
+            <h3 class="panel-title">Author: <%= posts[i].author %>, Time：<%= posts[i].createTime %></h3>
           </div>
-          <div class="panel-body">
+          <div class="panel-body" id="">
+            <div id="<%= posts[i]._id %>"> <!--for edit function-->
             <%= posts[i].content  %>
+           </div>
             <% if (isAdmin) { %>
-              <a class="btn-delete" data-id="<%= posts[i]._id %>">delete</a>
+              <a class="btn btn-edit" data-id="<%= posts[i]._id %>">edit</a>
+              <a class="btn btn-delete" data-id="<%= posts[i]._id %>">delete</a>
             <% } %>
           </div>
         </div>
       <% } %>
     </div>
   </div>
+</main>
+
+<footer>
+  <section class="footer">
+      <div class="logo">
+          <h1>Simple Message Board</h1>
+      </div>
+</section>
+</footer>
+
+
+
 </body>
 </html>

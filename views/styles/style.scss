@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+}
+.active {
+  color: #337ab7;
+}
+header {
+  box-shadow: 0 8px 6px -6px black;
+  nav {
+    width: 100%;
+    ul {
+      padding: 2rem;
+      width: 70%;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+
+      li {
+        display: flex;
+
+        font-size: 1.75rem;
+        a {
+          color: black;
+          text-decoration: None;
+        }
+      }
+    }
+  }
+}
+
+body {
+  .container {
+    margin: 5rem;
+    .panel-body {
+      font-size: 2rem;
+      margin: 1rem;
+    }
+  }
+  .btn-edit,
+  .btn-delete,
+  .btn-login,
+  .btn-newpost {
+    background-color: #337ab7;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+      sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0.5rem;
+    outline: none;
+    padding: 8px 0.8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+  }
+
+  .button-7:hover,
+  .button-7:focus {
+    background-color: #07c;
+  }
+
+  .button-7:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+  }
+
+  .button-7:active {
+    background-color: #0064bd;
+    box-shadow: none;
+  }
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  bottom: 0px;
+  /*min-height: 30vh;*/
+  justify-content: space-between;
+  div.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  nav {
+    flex: 2 1 50px;
+    margin: 2rem 0rem;
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      li {
+        flex-basis: 100px;
+        a {
+          color: white;
+          font-size: 1.75rem;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  header {
+    nav {
+      ul {
+        width: 10 0%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        li {
+          padding: 1rem;
+          /*border-bottom: 2px solid gray;*/
+        }
+      }
+    }
+  }
+}
