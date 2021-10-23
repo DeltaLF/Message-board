@@ -4,7 +4,11 @@ A simple message board for practicing node js.
 
 reference from:https://ithelp.ithome.com.tw/articles/10187441
 
-demo:  
+v2:
+1. add simple css files
+2. add edit button to edit message
 
-![image](https://github.com/DeltaLF/Message-board/blob/main/demo.gif)
+demo2:  
+
+![image](https://github.com/DeltaLF/Message-board/blob/v2/demo2.gif)
 
