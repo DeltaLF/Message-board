@@ -30,6 +30,21 @@ var DB = {
             cb(err,obj)
         });
     },
+    editPost: function(id,edited_data,cb){            // id:string posts[i].id:num
+        var collection = db.db().collection('documents');
+        console.log("id to looking for:")
+        console.log(id)
+        console.log(collection)
+        collection.findOneAndUpdate({'_id': ObjectId(id)},{$set:{"content":edited_data}},
+        function(err,docs){
+            if(err){
+                throw err;
+            }else if(docs){
+                console.log(docs)
+            }
+        cb(err,docs)
+        });
+    },
     getPosts: function(cb){
         var collection = db.db().collection('documents');
         collection.find({}).toArray(function(err,docs){

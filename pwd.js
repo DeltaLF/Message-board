@@ -52,7 +52,7 @@ var PWD = {
                 cb(err);
             } else{
                 console.log('get userdata success')
-                console.log(JSON.parse(data))
+                /*console.log(JSON.parse(data))*/
                 cb(err,JSON.parse(data))
             }
         })
