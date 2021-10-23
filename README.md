@@ -6,7 +6,7 @@ reference from:https://ithelp.ithome.com.tw/articles/10187441
 
 v2:
 1. add simple css files
-2. add edit button to edit message
+2. add an edit button to edit message
 
 demo2:  
 
